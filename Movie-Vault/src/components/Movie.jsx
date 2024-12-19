@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useEffect , useState} from 'react';
 import Pagination from './Pagination';
 
-function Movie() {
+function Movie( {handleAddToWatchList , handleDeleteFromWatchList ,watchList}) {
   const [page , setPage] = useState(1)
   const [movies, setMovies] = useState([]);
   function handlePrev(){
@@ -36,7 +36,13 @@ function Movie() {
 
         <div className='flex flex-row justify-between flex-wrap gap-5'>
             {movies.map((movieDoc) =>{
-              return <MovieCard poster_path={ movieDoc.poster_path } original_title={movieDoc.original_title}/>
+              return <MovieCard movieDoc={movieDoc} poster_path={ movieDoc.poster_path } original_title={movieDoc.original_title  } 
+              handleAddToWatchList={handleAddToWatchList}
+              handleDeleteFromWatchList={handleDeleteFromWatchList}
+              watchList={watchList}
+              key={movieDoc.id}  
+              vote_average={movieDoc.vote_average}
+               release_date={movieDoc.release_date} />
             })}
 
 
