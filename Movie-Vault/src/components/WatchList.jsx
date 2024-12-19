@@ -1,4 +1,5 @@
 import React , {useState} from "react";
+import genre_ids  from "../genre";
 
 function WatchList({ watchList }) {
   const [search, setSearch] = useState("");
@@ -65,7 +66,7 @@ function WatchList({ watchList }) {
                     </td>
                     <td>{movieObj.vote_average}</td>
                     <td>{movieObj.popularity}</td>
-                    <td>Adventure</td>
+                    <td>{movieObj.genre_ids && movieObj.genre_ids.length > 0 ? genre_ids[movieObj.genre_ids[0]] : 'N/A'}</td>
 
                     <td>
                       <button className="text-red-500 font-medium p-2 ">
