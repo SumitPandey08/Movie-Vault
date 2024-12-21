@@ -18,6 +18,6 @@ const genre_ids =  {
     10770: "TV Movie",
     9645: "Sport",
     10759 : "Western"
-  }
+  }   
   
   export default genre_ids ;

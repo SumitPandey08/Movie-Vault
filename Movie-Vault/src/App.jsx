@@ -21,8 +21,11 @@ function App() {
 function handleDeleteFromWatchList(movieDoc){
   let filteredWatchList = watchList.filter(movie => movie.id !== movieDoc.id);
   setWatchList(filteredWatchList);
+  localStorage.setItem("moviesApp" , JSON.stringify(filteredWatchList) ) ;
 
 }
+
+
 
 useEffect(() => {
   let movieFromLS =localStorage.getItem("moviesApp")
@@ -43,7 +46,7 @@ useEffect(() => {
               <Movie handleAddToWatchList={handleAddToWatchList} handleDeleteFromWatchList = {handleDeleteFromWatchList} watchList={watchList}/>
             </>
           } />
-          <Route path="/watchlist" element={<WatchList watchList={watchList}/>} />
+          <Route path="/watchlist" element={<WatchList  watchList={watchList} handleDeleteFromWatchList={handleDeleteFromWatchList} setWatchList={setWatchList}/>} />
         </Routes>
       </BrowserRouter>
     </>
