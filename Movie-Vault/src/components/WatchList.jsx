@@ -57,8 +57,8 @@ function WatchList({ watchList , setWatchList , handleDeleteFromWatchList }) {
       <div 
         onClick={() => handleFilter(genre)} 
         className={currGenre === genre 
-          ? "flex justify-center items-center h-[3rem] w-[9rem] bg-blue-400 rounded-xl text-white font-bold mx-4" 
-          : "flex justify-center items-center h-[3rem] w-[9rem] bg-gray-400/60 rounded-xl text-white font-bold mx-4"}
+          ? "flex justify-center items-center h-[3rem] w-[9rem] hover:cursor-pointer bg-blue-400 rounded-xl text-white font-bold mx-4" 
+          : "flex justify-center items-center h-[3rem] w-[9rem] hover:cursor-pointer bg-gray-400/60 rounded-xl text-white font-bold mx-4"}
       >
         {genre}
       </div>
